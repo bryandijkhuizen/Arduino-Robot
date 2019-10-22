@@ -13,20 +13,23 @@
   #include <Servo.h>
   #include <NewPing.h>
   #include <LiquidCrystal.h>
+
+  #define USTrigger 26
+  #define USEcho 28
+  #define MaxDistance 400
+  #define MAX_SPEED 255
+
   AF_DCMotor motor1(1);
   AF_DCMotor motor2(2);
   AF_DCMotor motor3(3);
   AF_DCMotor motor4(4);
+
   Servo servo;
-       #define USTrigger 26
-       #define USEcho 28
-       #define MaxDistance 400
-       #define MAX_SPEED 255    // sets speed of DC traction motors to 180/256 or about 70% of full speed
-      
-           NewPing sonar(USTrigger, USEcho, MaxDistance);
+
+   NewPing sonar(USTrigger, USEcho, MaxDistance);
    LiquidCrystal lcd(40, 38, 30, 32, 34, 36);
 
-  int i;
+   int i;
    //------------------------  
  
     unsigned int duration;
@@ -52,14 +55,8 @@
       pinMode(ledWitVoorLinks,    OUTPUT);  
       pinMode(ledRoodAchterRechts,OUTPUT);  
       pinMode(ledRoodAchterLinks, OUTPUT);  
-      pinMode(ledFront, OUTPUT);   
-       // Serial.begin(115200);   
-       // Serial.println("Motor test!");
-//--------------lcd-----------------
-    //lcd.begin(16, 2);
-    //lcd.print("Motor test!");
-//----------------------------------    
-    servo.attach(10);
+      pinMode(ledFront, OUTPUT);
+      servo.attach(10);
          
         motor1.setSpeed(255); // Links achter  set the speed to 150/255
         motor2.setSpeed(255); // Rechts achter   set the speed to 150/255
