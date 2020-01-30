@@ -1,14 +1,3 @@
-  /*
-  // Adafruit Motor shield library
-  // copyright Adafruit Industries LLC, 2009
-  // this code is public domain, enjoy!
-  // motor party
-  
-   Aangepast door Henk
-   Werkt met motor shield L293D
-  
-  */
-  
   #include <AFMotor.h>
   #include <Servo.h>
   #include <NewPing.h>
@@ -58,10 +47,10 @@
       pinMode(ledFront, OUTPUT);
       servo.attach(10);
          
-        motor1.setSpeed(255); // Links achter  set the speed to 150/255
-        motor2.setSpeed(255); // Rechts achter   set the speed to 150/255
-        motor3.setSpeed(255); // Rechts voor set the speed to 150/255
-        motor4.setSpeed(255); // Links voor  set the speed to 150/255
+        motor1.setSpeed(255); // Links achter 
+        motor2.setSpeed(255); // Rechts achter  
+        motor3.setSpeed(255); // Rechts voor
+        motor4.setSpeed(255); // Links voor
   motor1.run(RELEASE);
   motor2.run(RELEASE);
   motor3.run(RELEASE);
@@ -118,15 +107,15 @@
       digitalWrite(ledRoodAchterRechts,HIGH);        
       digitalWrite(ledRoodAchterLinks, HIGH);        
       digitalWrite(ledFront, HIGH);
-      motor1.setSpeed(i);     // set the speed to 80/255
-      motor2.setSpeed(i);     // set the speed to 175/255
-      motor3.setSpeed(i);     // set the speed to 80/255
-      motor4.setSpeed(255);     // set the speed to 175/255
+      motor1.setSpeed(i);     
+      motor2.setSpeed(i);    
+      motor3.setSpeed(i);    
+      motor4.setSpeed(255);  
                 
-      motor1.run(FORWARD); // Links achter     turn it on going forward
-      motor2.run(FORWARD); // Rechts achter   turn it on going forward
-      motor3.run(FORWARD); // Rechts voor      turn it on going forward
-      motor4.run(FORWARD); // Links voor   turn it on going forward
+      motor1.run(FORWARD); // Links achter    
+      motor2.run(FORWARD); // Rechts achter
+      motor3.run(FORWARD); // Rechts voor   
+      motor4.run(FORWARD); // Links voor
         //delay(1000);
   }
   //-------------------------------------------------------------------------------------------------------------------------------------
@@ -142,12 +131,11 @@
       motor2.setSpeed(i); 
       motor3.setSpeed(i); // set the speed to 80/255
       motor4.setSpeed(i); 
-      motor1.run(BACKWARD);  // Links achter     turn it on going backward
-      motor2.run(BACKWARD);   // Rechts achter   turn it on going backward
-      motor3.run(BACKWARD);   // Rechts voor      turn it on going backward
-      motor4.run(BACKWARD);   // Links voor    turn it on going backward
+      motor1.run(BACKWARD);  // Links achter     
+      motor2.run(BACKWARD);   // Rechts achter 
+      motor3.run(BACKWARD);   // Rechts voor     
+      motor4.run(BACKWARD);   // Links voor  
         delay(50);
-  //return;
   }  
   //-------------------------------------------------------------------------------------------------------------------------------------
   void moveRight() 
@@ -158,10 +146,10 @@
       digitalWrite(ledRoodAchterRechts,HIGH);        
       digitalWrite(ledRoodAchterLinks, LOW);     
      
-      motor1.run(FORWARD); // Links achter    turn it on going forward
-      motor2.run(RELEASE); // Rechts achter  turn it on going forward
-      motor3.run(RELEASE); // Rechts voor     turn it on going forward
-      motor4.run(FORWARD); // Links voor   turn it on going forward
+      motor1.run(FORWARD); // Links achter 
+      motor2.run(RELEASE); // Rechts achter
+      motor3.run(RELEASE); // Rechts voor     
+      motor4.run(FORWARD); // Links voor  
        delay(1000);
   }
     //-------------------------------------------------------------------------------------------------------------------------------------
@@ -172,22 +160,22 @@
       digitalWrite(ledRoodAchterRechts,LOW);        
       digitalWrite(ledRoodAchterLinks, HIGH);    
      
-     motor1.run(RELEASE);  // Links achter      turn it on going forward
-     motor2.run(FORWARD);  // Rechts achter   turn it on going forward
-     motor3.run(FORWARD);  // Rechts voor      turn it on going forward
-     motor4.run(RELEASE);  // Links voor    turn it on going forward
+     motor1.run(RELEASE);  // Links achter     
+     motor2.run(FORWARD);  // Rechts achter  
+     motor3.run(FORWARD);  // Rechts voor      
+     motor4.run(RELEASE);  // Links voor  
        delay(1000); 
   }  
   //-------------------------------------------------------------------------------------------------------------------------------------
   void turnAround() 
  {
-   motor1.run(FORWARD);     // Links achter    turn motor 1 forward
-   motor2.run(RELEASE);     // Rechts achter   turn motor 2 backward
-   motor3.run(RELEASE);     // Rechts voor    turn motor 1 forward
-   motor4.run(FORWARD);     // Links voor   turn motor 2 backward
-    delay(50); // run motors this way for 800ms
+   motor1.run(FORWARD);     // Links achter    
+   motor2.run(RELEASE);     // Rechts achter   
+   motor3.run(RELEASE);     // Rechts voor    
+   motor4.run(FORWARD);     // Links voor 
+    delay(50); 
   }   
-void scan()             //This function determines the distance things are away from the ultrasonic sensor
+void scan()             
     {
       Time = sonar.ping(); 
       distance = Time / US_ROUNDTRIP_CM;
